@@ -4,11 +4,11 @@ services:
   backend:
     build: 
       context: .
-      dockerfile: Dockerfile
+      dockerfile: DockerFile
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
+      - ./admin:/app
     depends_on:
       - db
     networks:
@@ -18,7 +18,7 @@ services:
     image: mysql:8
     restart: always
     environment:
-      MYSQL_DATABASE: admin
+      MYSQL_DATABASE: admins
       MYSQL_USER: admin
       MYSQL_PASSWORD: root
       MYSQL_ROOT_PASSWORD: root

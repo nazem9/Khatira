@@ -24,8 +24,6 @@ class UserProfileTest(TestCase):
         print("Nationality:", profile.nationality)
         print("City:", profile.city)
         print("Gender:", profile.gender)
-        print("Accessibility:", profile.accessibilty)
-        print("Languages:", profile.languages_id)
         
         # Additional assertions to diagnose the issue further
         self.assertIsNotNone(profile, "Profile should not be None")
