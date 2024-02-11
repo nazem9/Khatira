@@ -5,9 +5,14 @@ from phonenumber_field.formfields import PhoneNumberField
 class Language(models.Model):
     language = models.CharField(max_length=50, null=True)
 
+    def __str__(self) -> str:
+        return self.language.__str__()
+
 class Dialect(models.Model):
     dialect = models.CharField(max_length=50, null=True)
     language = models.ManyToManyField(Language, related_name='dialect_languages', blank=True)
+    def __str__(self) -> str:
+        return self.dialect.__str__()
 
 class UserProfile(models.Model):
     followers = models.ManyToManyField(User, related_name='followed_by', symmetrical=False, blank=True)

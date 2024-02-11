@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'rest_framework',
     'corsheaders',
-    'AppAuth.apps.AppAuthConfig'
+    'AppAuth.apps.AppAuthConfig',
+    'post.apps.PostConfig'
 ]
 
 MIDDLEWARE = [
