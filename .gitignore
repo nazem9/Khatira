@@ -1,2 +1,6 @@
 dbdata/
 venv/
+
+frontend/node_modules/
+
+mongodata/
