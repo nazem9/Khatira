@@ -31,7 +31,7 @@ class UserLogin(APIView):
         if serializer.is_valid(raise_exception=True):
             user = serializer.check_user(data)
             login(request, user)
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response({},status=status.HTTP_200_OK)
 
 
 class UserLogout(APIView):
@@ -63,7 +63,7 @@ class UesrProfileView(APIView):
             profile = UserProfile.objects.get(user = request.user.id)
             serializer = UserProfileSerializer(profile)
             serializer.update(profile,validated_data=request.data)
-            return Response(serializer.data,status=status.HTTP_200_OK)
+            return Response(status=status.HTTP_200_OK)
         else:
             return Response({"message":"you're not logged in!"},status=status.HTTP_403_FORBIDDEN)
 
@@ -72,6 +72,6 @@ class UesrProfileView(APIView):
             profile = UserProfile.objects.get(user = request.user.id)
             serializer = UserProfileSerializer(profile)
             serializer.update(profile,validated_data=request.data)
-            return Response(serializer.data,status=status.HTTP_200_OK)
+            return Response(status=status.HTTP_200_OK)
         else:
             return Response({"message":"you're not logged in!"},status=status.HTTP_403_FORBIDDEN)   
